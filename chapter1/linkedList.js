@@ -21,7 +21,7 @@ four.next = three;
 three.next = two;
 two.next = one;
 
-console.log(four);
+// console.log(four);
 
 const printList = list => {
   let current = list;
@@ -31,6 +31,21 @@ const printList = list => {
   }
 }
 
-printList(four);
-printList(two);
-printList(null);
+// printList(four);
+// printList(two);
+// printList(null);
+
+//Because each node is in and of itself a list, this is known as a recursive data structure
+//As such, we can run a recursive function on it.
+
+const printListRecursive = list => {
+  if (list) {
+    console.log(list.value);
+  }
+  else {
+    return;
+  }
+  printListRecursive(list.next);
+}
+
+printListRecursive(two);
